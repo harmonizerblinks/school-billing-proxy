@@ -1,0 +1,34 @@
+{
+  "name": "school-billing-proxy",
+  "version": "0.0.4",
+  "description": "School billing Platform Proxy SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha ./test/*.js --reporter spec --timeout 10000"
+  },
+  "keywords": [
+    "API",
+    "Ghana",
+    "Payment",
+    "Collection",
+    "OTP"
+  ],
+  "author": "Harmony Alabi <harmonizerblinks@gmail.com> (https://www.linkedin.com/in/harmony-alabi)",
+  "license": "MIT",
+  "dependencies": {
+    "promise": "^8.0.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^9.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harmonizerblinks/school-billing-proxy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/harmonizerblinks/school-billing-proxy/issues"
+  },
+  "homepage": "https://github.com/harmonizerblinks/school-billing-proxy"
+}
