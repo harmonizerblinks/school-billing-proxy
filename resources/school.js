@@ -58,6 +58,69 @@ module.exports = {
   }, 
 
   /*
+  Get Department 
+  */
+  getDepartments: {
+    method: 'post',
+    endpoint: [root, '/getDepartments'].join(''),
+    params: ['formId*']
+  },
+
+  /*
+  Get Forms 
+  */
+  getForms: {
+    method: 'post',
+    endpoint: [root, '/getForms'].join(''),
+    // params: ['code*']
+  },
+
+  /*
+  Get Class 
+  */
+  getClass: {
+    method: 'post',
+    endpoint: [root, '/getClass'].join(''),
+    // params: ['code*']
+  },
+
+  /*
+  Get Levels 
+  */
+  getLevels: {
+    method: 'post',
+    endpoint: [root, '/getLevels'].join(''),
+    // params: ['code*']
+  },
+
+  /*
+  Get Semesters
+  */
+  getSemesters: {
+    method: 'post',
+    endpoint: [root, '/getSemesters'].join(''),
+    // params: ['code*']
+  },
+
+  /*
+  Get Courses
+  */
+  getCourses: {
+    method: 'post',
+    endpoint: [root, '/getCourses'].join(''),
+    params: ['code*']
+  },
+
+  /*
+  Get Courses
+  */
+  getAdmission: {
+    method: 'post',
+    endpoint: [root, '/getAdmission'].join(''),
+    params: ['code*']
+  },
+
+  /*
   Get Student 
   */
   getStudent: {

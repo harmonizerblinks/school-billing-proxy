@@ -52,7 +52,7 @@ For all resource methods, the JSON body can be passed as the argument.
   - verifyOtp
   - buyVoucher
   - verifyVoucher
-  - getDepartment
+  - getDepartments
   - getForms
   - getClass
   - getLevels
