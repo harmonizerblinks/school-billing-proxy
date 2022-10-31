@@ -1,6 +1,6 @@
 {
   "name": "school-billing-proxy",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "School billing Platform Proxy SDK",
   "main": "index.js",
   "scripts": {

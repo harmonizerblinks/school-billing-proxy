@@ -72,7 +72,6 @@ For all resource methods, the JSON body can be passed as the argument.
   - getFeeTypes
   - getNotifications
   - getNotificationById
-  - getNotificationById
   - recentPayments
   - requestFeePayment
   - payBills

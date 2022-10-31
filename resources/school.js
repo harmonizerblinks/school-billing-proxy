@@ -18,7 +18,7 @@ module.exports = {
   getActiveSession: {
     method: 'post',
     endpoint: [root, '/getStudent'].join(''),
-    // params: ['studentNumber*']
+    params: []
   },
 
   /*
@@ -37,6 +37,15 @@ module.exports = {
     method: 'post',
     endpoint: [root, '/VerifyOtp'].join(''),
     params: ['mobile*','otp*']
+  }, 
+
+  /*
+  Send Sms 
+  */
+  sendSms: {
+    method: 'post',
+    endpoint: [root, '/sendSms'].join(''),
+    params: ['mobile*','message*']
   }, 
 
   /*
@@ -72,7 +81,7 @@ module.exports = {
   getForms: {
     method: 'post',
     endpoint: [root, '/getForms'].join(''),
-    // params: ['code*']
+    params: []
   },
 
   /*
@@ -81,7 +90,7 @@ module.exports = {
   getClass: {
     method: 'post',
     endpoint: [root, '/getClass'].join(''),
-    // params: ['code*']
+    params: []
   },
 
   /*
@@ -90,7 +99,7 @@ module.exports = {
   getLevels: {
     method: 'post',
     endpoint: [root, '/getLevels'].join(''),
-    // params: ['code*']
+    params: []
   },
 
   /*
@@ -99,7 +108,7 @@ module.exports = {
   getSemesters: {
     method: 'post',
     endpoint: [root, '/getSemesters'].join(''),
-    // params: ['code*']
+    params: [ ]
   },
 
   /*
@@ -112,11 +121,29 @@ module.exports = {
   },
 
   /*
-  Get Courses
+  Get Admission
   */
   getAdmission: {
     method: 'post',
     endpoint: [root, '/getAdmission'].join(''),
+    params: ['code*']
+  },
+
+  /*
+  Submit Application
+  */
+  submitApplication: {
+    method: 'post',
+    endpoint: [root, '/submitApplication'].join(''),
+    params: ['code*']
+  },
+
+  /*
+  Change Pin
+  */
+  changePin: {
+    method: 'post',
+    endpoint: [root, '/changePin'].join(''),
     params: ['code*']
   },
 
@@ -130,50 +157,131 @@ module.exports = {
   },
 
   /*
-  Create Checkout 
+  Get Student Bills 
   */
-  CreateCheckout: {
+  getStudentBills: {
     method: 'post',
-    endpoint: [root, '/CreateCheckout'].join(''),
-    params: ['options','name*','email*','mobile*', 'amount*', 'currency*', 'order_id*', 'order_desc*', 'customerid', 'idnumberid', 'redirecturl','callback']
+    endpoint: [root, '/getStudentBills'].join(''),
+    params: ['studentNumber*','isMandatory*','page','limit','index']
   },
 
   /*
-  Get Checkout
+  Get Student Bills Ussd 
   */
-  GetCheckout: {
+  getStudentBillsUssd: {
+    method: 'post',
+    endpoint: [root, '/getStudentBillsUssd'].join(''),
+    params: ['studentNumber*','isMandatory*','page*','limit*','index*']
+  },
+
+  /*
+  Get StudentWallet
+  */
+  getStudentWallet: {
+    method: 'post',
+    endpoint: [root, '/getAdmission'].join(''),
+    params: ['studentNumber*']
+  },
+
+  /*
+  Student Topup 
+  */
+  studentTopup: {
+    method: 'post',
+    endpoint: [root, '/CreateCheckout'].join(''),
+    params: ['options','name*','email*','mobile*', 'amount*', 'currency*', 'order_id*', 'order_desc*', 'customerid']
+  },
+
+  /*
+  Wallet Topup
+  */
+  walletTopup: {
     method: 'post',
     endpoint: [root, '/GetCheckout'].join(''),
     params: ['code*','id']
   },
 
   /*
-  Get Checkout
+  Get Student Message
   */
-  ProcessMomoCheckout: {
+  getStudentMessage: {
     method: 'post',
-    endpoint: [root, '/PayMomoCheckout'].join(''),
+    endpoint: [root, '/getStudentMessage'].join(''),
     params: ['code*','id*','mobile*', 'mobile_network*', 'otp']
-  },
+  }, 
 
 
   /*
-  Send Payment (Cashout)
+  Post Student Message
   */
-  ProcessCardCheckout: {
+  postMessage: {
     method: 'post',
-    endpoint: [root, '/PayCardCheckout'].join(''),
-    params: ['code*','id*','card_number*', 'expiry_year*', 'expiry_month*', 'cvv*', 'pin', 'otp']
-  },
+    endpoint: [root, '/postMessage'].join(''),
+    params: ['code*','id*','mobile*', 'mobile_network*', 'otp']
+  }, 
 
   /*
-  Verify Card Transaction
+  Get FeeTypes
   */
-  verifyCardPayment: {
+  getFeeTypes: {
     method: 'post',
-    endpoint: [root, '/VerifyCardPayment'].join(''),
-    params: ['type*','order_id*','value']
-  },
+    endpoint: [root, '/getFeeTypes'].join(''),
+    params: ['code*','id*','mobile*', 'mobile_network*', 'otp']
+  }, 
+
+  /*
+  Get Notifications
+  */
+  getNotifications: {
+    method: 'post',
+    endpoint: [root, '/getNotifications'].join(''),
+    params: ['code*','id*','mobile*', 'mobile_network*', 'otp']
+  }, 
+
+  /*
+  Get Notification By Id
+  */
+  getNotificationById: {
+    method: 'post',
+    endpoint: [root, '/getNotificationById'].join(''),
+    params: ['code*','id*','mobile*', 'mobile_network*', 'otp']
+  }, 
+
+  /*
+  Get Recent Payments
+  */
+  recentPayments: {
+    method: 'post',
+    endpoint: [root, '/recentPayments'].join(''),
+    params: ['code*','id*','mobile*', 'mobile_network*', 'otp']
+  }, 
+
+  /*
+  Request Fee Payment
+  */
+  requestFeePayment: {
+    method: 'post',
+    endpoint: [root, '/requestFeePayment'].join(''),
+    params: ['code*','id*','mobile*', 'mobile_network*', 'otp']
+  }, 
+
+  /*
+  Pay Bills
+  */
+  payBills: {
+    method: 'post',
+    endpoint: [root, '/payBills'].join(''),
+    params: ['code*','id*','mobile*', 'mobile_network*', 'otp']
+  }, 
+
+  /*
+    Payment Report
+  */
+    paymentReport: {
+      method: 'post',
+      endpoint: [root, '/GetTransStatus'].join(''),
+      params: ['type*','order_id*']
+    },
 
   /*
     Verify transaction
