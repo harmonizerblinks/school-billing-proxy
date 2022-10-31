@@ -79,27 +79,8 @@ For all resource methods, the JSON body can be passed as the argument.
   - paymentReport
   - verifyPayment
 
-```js
-billing.school.createCheckout({
-	name: 'Firstname Lastname',
-	mobile: '+233540000000',
-	mobile_network: 'MTN || AIRTEL || TIGO || VODAFONE',
-	email: 'harmony@cross-switch.com',
-	currency: 'GHS',
-	amount: 0.1,
-	order_id: `${Math.ceil(Math.random() * 10e8)}`,
-	order_desc: 'Testing',
-	account: '',
-	customerid: '',
-	callback: ''
-}).then((body)=> {
-	console.log(body);
-}).catch((error)=> {
-	console.log(error);
-});
-```
 
-Method to process mobile Money on Checkout.
+Method to purchase Voucher
 
 ```js
 billing.school.buyVoucher({
@@ -118,10 +99,10 @@ billing.school.buyVoucher({
 ```
 
 
-Method to Get Cashout Balance.
+Method to Verify voucher.
 
 ```js
-payment.checkout.getCheckout({})
+billing.school.verifyVoucher({code: code })
 .then((body)=> {
 	console.log(body);
 }).catch((error)=> {
@@ -132,8 +113,8 @@ payment.checkout.getCheckout({})
 Method to Verify Transaction status.
 
 ```js
-payment.checkout.verifyPayment({
-	order_id: `${data.transaction_no}`,
+billing.school.verifyPayment({
+	order_id: `${transactionid}`,
 }).then((body)=> {
 	console.log(body);
 }).catch((error)=> {
